@@ -1,0 +1,96 @@
+<%- include('../../partials/header.ejs') %>
+    <main>
+        <div class="container todo_container">
+            <div class="inner_todo">
+                <h2>Add Your Task</h2>
+                <form action="/addNewTask" method="post" class="taskForm">
+                    <div class="row">
+                        <div class="form-group mb-2">
+                            <label for="taskName" class="form-label fw-semibold">Task Name</label>
+                            <input type="taskName" name="taskName" id="taskName" class="form-control"
+                                placeholder="Enter your task name">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="priority" class="form-label fw-semibold">Priority</label>
+                            <select name="priority" id="priority" class="form-select">
+                                <option value="Select-priority" selected disabled>Select-priority</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date" class="form-label fw-semibold">Date</label>
+                            <input type="date" name="date" id="date" class="form-select">
+
+                        </div>
+                        <div class="form-group">
+
+                            <input type="hidden" name="taskId" id="taskId">
+
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="w-100 submit_btn_todo">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="task_list_container">
+                <div class="table-responsive">
+                    <table class="table text-center">
+                        <% if (todos.length> 0) { %>
+                            <thead>
+                                <tr>
+                                    <th>Serial No</th>
+                                    <th>Task Name</th>
+                                    <th>Priority</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <% } %>
+
+                                <tbody>
+                                    <% if (todos.length> 0) { %>
+                                        <% todos.forEach(({taskName,priority,status,date,_id},index)=> { %>
+                                            <tr id="<%= _id %>">
+                                                <td>
+                                                    <%= index + 1 %>
+                                                </td>
+                                                <td class="taskName">
+                                                    <%= taskName%>
+                                                </td>
+                                                <td class="priority">
+                                                    <%= priority%>
+                                                </td>
+                                                <td class="status">
+                                                    <%=status%>
+                                                </td>
+                                                <td class="date">
+                                                    <%= date?.toDateString()%>
+                                                </td>
+                                                <td class="action">
+                                                    <button class="edit_btn" data-id="<%= _id %>">Edit</button>
+                                                    <a href="/deleteTask/<%= _id %>" class="delete_btn">Delete</a>
+                                                    <a href="/updateStatus/<%= _id %> " class="status_btn">Change
+                                                        Status</a>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+                                                <% } else{%>
+                                                    <h5 class="text-center text-danger fw-semibold">You hava did'nt add
+                                                        any task
+                                                    </h5>
+                                                    <% } %>
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../../partials/footer.ejs') %>
+        </body>
+
+        </html>

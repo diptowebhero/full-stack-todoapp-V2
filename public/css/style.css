@@ -1,0 +1,208 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error_page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error_page h3 {
+  color: crimson;
+  font-weight: 700;
+  font-size: 40px;
+}
+.error_page p {
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+}
+/* error page css end */
+.navbar {
+  background: linear-gradient(45deg, #5a00dd, #684efb);
+}
+.nav_logo {
+  font-weight: 700 !important;
+  font-size: 30px !important;
+  color: white !important;
+}
+.nav-item a {
+  color: white !important;
+  font-weight: 500;
+  font-size: 16px;
+}
+.btn_logout {
+  background: linear-gradient(335.64deg, #ff589b -19.22%, #ff136f 118.87%);
+  padding: 7px 25px !important;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+.btn_logout:hover {
+  background: linear-gradient(335.64deg, #f55897 -19.22%, #d04f80 118.87%);
+}
+.username {
+  text-transform: capitalize !important;
+}
+/* nav css end */
+
+.login_form {
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+}
+.signUp-form {
+  margin: 25px 0px;
+}
+.login_form h3 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  color: #2b2b2b;
+  padding-bottom: 15px;
+}
+.login_form form {
+  margin: 24px 0px;
+}
+.login_form form label {
+  color: #2b2b2b !important;
+}
+.login_form form input,
+select {
+  background: #f0f0f0;
+  padding: 10px 15px !important;
+  font-weight: 500 !important;
+}
+.inner_todo form input,
+select {
+  background: #f0f0f0 !important;
+  padding: 10px 15px !important;
+  font-weight: 500 !important;
+}
+.login_form,
+.inner_todo,
+form input:focus,
+select:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+.submit_btn,
+.submit_btn_todo {
+  background: linear-gradient(45deg, #5a00dd, #684efb) !important;
+  color: white !important;
+}
+.submit_btn_todo {
+  border: none;
+  padding: 10px 15px !important;
+  font-weight: 500 !important;
+  border-radius: 5px;
+}
+
+/* form css end */
+
+.confirm-page {
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+.confirm-page h2 {
+  font-weight: 700;
+}
+.confirm-page a {
+  font-weight: 500;
+  font-size: 17px;
+}
+/* confirmation page css end*/
+
+.todo_container {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 30px 0px;
+}
+.inner_todo,
+.task_list_container {
+  max-width: 950px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 30px;
+}
+
+.inner_todo h2 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  color: #2b2b2b;
+  padding-bottom: 15px;
+}
+table thead {
+  background: linear-gradient(45deg, #5a00dd, #684efb) !important;
+  color: white;
+  border-radius: 5px;
+}
+table tbody tr td {
+  font-weight: 500;
+  color: #2b2b2b;
+  padding: 10px 0px !important;
+  text-transform: capitalize;
+}
+
+.action button,
+a {
+  border: none;
+}
+.edit_btn,
+.status_btn,
+.delete_btn {
+  padding: 4px 10px;
+  font-weight: 500;
+  color: white;
+  border-radius: 4px;
+}
+.edit_btn {
+  background: #4caf50;
+}
+.status_btn {
+  background: #1ecd97;
+}
+.delete_btn {
+  background: crimson;
+}
+.action a {
+  text-decoration: none;
+}
+.action a:hover {
+  color: white !important;
+}
+/* todo page css end */
+footer {
+  /* background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  padding: 15px 0px;
+}
+footer p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+/* footer css end */

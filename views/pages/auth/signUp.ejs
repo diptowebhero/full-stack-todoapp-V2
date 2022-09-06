@@ -1,0 +1,65 @@
+<%- include('../../partials/header.ejs') %>
+    <main>
+        <div class="login_form signUp-form shadow">
+            <h3>Sign Up To Todo App</h3>
+            <form action="/signup" method="post">
+                <div class="row gap-3">
+                    <div class="form-group">
+                        <label for="username" class="form-label fw-semibold">Your Username</label>
+                        <input type="text" name="username" id="username"
+                            class="form-control <%= error.username?.msg ? 'is-invalid' : ''%> "
+                            value="<%= user.username ? user.username :'' %>" placeholder="Enter your Username">
+                        <div class="invalid-feedback">
+                            <p class="m-0 fw-semibold">
+                                <%= error.username?.msg && error.username.msg %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label fw-semibold">Your Email</label>
+                        <input type="email" name="email" id="email"
+                            class="form-control <%= error.email?.msg ? 'is-invalid' : ''%>"
+                            value="<%= user.email ? user.email :'' %> " placeholder="Enter your email">
+                        <div class="invalid-feedback">
+                            <p class="m-0 fw-semibold">
+                                <%= error.email?.msg && error.email.msg %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label fw-semibold">Your Password</label>
+                        <input type="password" name="password" id="password"
+                            class="form-control <%= error.password?.msg ? 'is-invalid' : ''%>"
+                            value="<%= user.password ? user.password :'' %>" placeholder="Enter your password">
+                        <div class="invalid-feedback">
+                            <p class="m-0 fw-semibold">
+                                <%= error.password?.msg && error.password?.msg %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label fw-semibold">Conform Password</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword"
+                            class="form-control <%= error.confirmPassword?.msg ? 'is-invalid' : ''%>"
+                            placeholder="Confirm your password">
+                        <div class="invalid-feedback">
+                            <p class="m-0 fw-semibold">
+                                <%= error.confirmPassword?.msg && error.confirmPassword?.msg %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="submit" class="form-control submit_btn"
+                            placeholder="Enter your password">
+                    </div>
+                    <div>
+                        <a href="/login">Have an account? Login Hare</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../../partials/footer.ejs') %>
+        </body>
+
+        </html>
