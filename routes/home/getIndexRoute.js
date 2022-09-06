@@ -21,6 +21,7 @@ indexRouter.post(
 
 //delete task handler
 indexRouter.get("/deleteTask/:taskId", checkLogin, taskDeleteController);
+// indexRouter.get("/deleteTask/:taskId", checkLogin, taskDeleteController);
 
 //Status update handler
 indexRouter.get("/updateStatus/:taskId", checkLogin, updateStatusController);
