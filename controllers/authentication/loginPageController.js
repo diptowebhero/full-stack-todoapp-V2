@@ -13,6 +13,7 @@ const loginPageController = async (req, res, next) => {
         httpOnly: true,
         secure: true,
       });
+      res.locals.loggedInUser = email;
       res.redirect("/");
     }
   } catch (error) {
