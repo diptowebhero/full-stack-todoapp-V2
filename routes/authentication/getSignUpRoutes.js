@@ -13,7 +13,7 @@ singUpRoutes.get("/", decorateHmlResponse("SignUp"), checkLogin, getSignUpPage);
 //sign up page handler
 singUpRoutes.post(
   "/",
-  decorateHmlResponse("signup"),
+  decorateHmlResponse("SignUp"),
   signupValidator,
   signupValidatorResult,
   signupPageController
