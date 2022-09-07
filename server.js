@@ -25,7 +25,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.set("view engine", "ejs");
 
 //set static folder
-app.use(express.static(path.join(__dirname + "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 //routing setup
 app.use("/", indexRouter);
