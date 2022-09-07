@@ -1,6 +1,6 @@
 const getSignUpPage = async (req, res, next) => {
   try {
-    res.render("pages/auth/signUp", { error: {}, user: {} });
+    return res.render("pages/auth/signUp", { error: {}, user: {} });
   } catch (error) {
     next(error);
   }
