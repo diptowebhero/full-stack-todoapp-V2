@@ -1,8 +1,8 @@
-const getSignUpPage = async (req, res, next) => {
+const getRegisterPage = async (req, res, next) => {
   try {
-    res.render("pages/auth/signUp", { error: {}, user: {} });
+    res.render("pages/auth/register", { error: {}, user: {} });
   } catch (error) {
     next(error);
   }
 };
-module.exports = getSignUpPage;
+module.exports = getRegisterPage;

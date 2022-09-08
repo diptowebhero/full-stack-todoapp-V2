@@ -6,9 +6,9 @@ const cookieParser = require("cookie-parser");
 const notfoundHandler = require("./middlewares/common/notFoundHandler");
 const errorHandler = require("./middlewares/common/errorHandler");
 const loginRoute = require("./routes/authentication/getLoginRoutes");
-const singUpRoutes = require("./routes/authentication/getSignUpRoutes");
 const indexRouter = require("./routes/home/getIndexRoute");
 const logoutRoute = require("./routes/authentication/logout");
+const registerRoutes = require("./routes/authentication/getSignUpRoutes");
 
 const app = express();
 dotenv.config();
@@ -29,7 +29,7 @@ app.use(express.static("public"));
 //routing setup
 app.use("/", indexRouter);
 app.use("/login", loginRoute);
-app.use("/signup", singUpRoutes);
+app.use("/register", registerRoutes);
 app.use("/logout", logoutRoute);
 
 //not found handler

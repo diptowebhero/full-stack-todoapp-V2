@@ -8,7 +8,7 @@ const signupValidatorResult = (req, res, next) => {
   if (Object.keys(mappedError).length === 0) {
     next();
   } else {
-    res.render("pages/auth/signup", { error: mappedError, user });
+    res.render("pages/auth/register", { error: mappedError, user });
   }
 };
 

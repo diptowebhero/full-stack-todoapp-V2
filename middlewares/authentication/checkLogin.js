@@ -11,21 +11,21 @@ const checkLogin = async (req, res, next) => {
       req.email = decode.email;
       const user = await User.findOne(req.body.email);
       if (user) {
-        if (req.originalUrl === "/login" || req.originalUrl === "/signup") {
+        if (req.originalUrl === "/login" || req.originalUrl === "/register") {
           return res.redirect("/");
         }
       }
       next();
     } else {
-      if (req.originalUrl === "/signup") {
-        return res.render("pages/auth/signup", { error: {}, user: {} });
+      if (req.originalUrl === "/register") {
+        return res.render("pages/auth/register", { error: {}, user: {} });
       }
       res.render("pages/auth/login", { error: {}, user: {} });
     }
   } catch (error) {
     if (error.message === "jwt expired") {
-      if (req.originalUrl === "/signup") {
-        return res.render("pages/auth/signup", { error: {}, user: {} });
+      if (req.originalUrl === "/register") {
+        return res.render("pages/auth/register", { error: {}, user: {} });
       }
       res.render("pages/auth/login", { error: {}, user: {} });
     }
