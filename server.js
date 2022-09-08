@@ -8,7 +8,7 @@ const errorHandler = require("./middlewares/common/errorHandler");
 const loginRoute = require("./routes/authentication/getLoginRoutes");
 const indexRouter = require("./routes/home/getIndexRoute");
 const logoutRoute = require("./routes/authentication/logout");
-const registerRoutes = require("./routes/authentication/getSignUpRoutes");
+const registerRoutes = require("./routes/authentication/getRegisterRoutes");
 
 const app = express();
 dotenv.config();

@@ -1,7 +1,7 @@
 const { check } = require("express-validator");
 const createHttpError = require("http-errors");
 const User = require("../../models/User");
-const signupValidator = [
+const registerValidator = [
   check("username")
     .isLength({ min: 1 })
     .withMessage("Username must be require!")
@@ -67,4 +67,4 @@ const signupValidator = [
     }),
 ];
 
-module.exports = signupValidator;
+module.exports = registerValidator;

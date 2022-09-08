@@ -1,7 +1,7 @@
 const User = require("../../models/User");
 const hashStr = require("../../utilities/utilities");
 
-const signupPageController = async (req, res, next) => {
+const registerPageController = async (req, res, next) => {
   const { username, email, password } = req.body;
   try {
     const newUser = new User({
@@ -16,4 +16,4 @@ const signupPageController = async (req, res, next) => {
   }
 };
 
-module.exports = signupPageController;
+module.exports = registerPageController;

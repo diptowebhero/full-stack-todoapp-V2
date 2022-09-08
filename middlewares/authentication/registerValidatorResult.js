@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const signupValidatorResult = (req, res, next) => {
+const registerValidatorResult = (req, res, next) => {
   const error = validationResult(req);
   const mappedError = error.mapped();
   const user = req.body;
@@ -12,4 +12,4 @@ const signupValidatorResult = (req, res, next) => {
   }
 };
 
-module.exports = signupValidatorResult;
+module.exports = registerValidatorResult;

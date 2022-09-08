@@ -6,7 +6,7 @@ const getIndexPage = async (req, res, next) => {
   try {
     const todos = await Todo.find({ user: req.email });
     const user = await User.findOne({ user: req.email });
-    // return console.log(user);
+    // return console.log(user.email);
     res.render("pages/home/index", { todos, user });
   } catch (error) {
     next(error);
